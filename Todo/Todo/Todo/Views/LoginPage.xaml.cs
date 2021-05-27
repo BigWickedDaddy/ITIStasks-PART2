@@ -17,10 +17,15 @@ namespace Todo.Views
         }
         async void OnSaveClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new TodoItemPage
+           string login = Login.Text;
+            //string login = ((Entry)sender).Text;
+            if(login == "Oleg")
             {
-                BindingContext = new TodoItem()
-            });
+                await Navigation.PushAsync(new TodoListPage
+                {
+                });
+            }
+        
         }
     }
 }
