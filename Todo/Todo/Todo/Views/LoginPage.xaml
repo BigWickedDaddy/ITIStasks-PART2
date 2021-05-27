@@ -1,11 +1,11 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
     x:Class="Todo.Views.LoginPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Title="Привет"
+    Title="Sign in with login"
     d:DataContext="{x:Static viewModel:LoginViewModel.Instance}"
     BackgroundColor="#5999CA"
     mc:Ignorable="d">
@@ -59,12 +59,14 @@
                                     </Frame>
 
                                     <Entry
+                                        x:Name="Login"
                                         Margin="0,0,20,0"
                                         HorizontalOptions="FillAndExpand"
-                                        Placeholder="Email"
+                                        Placeholder="Login"
                                         PlaceholderColor="DarkGray"
                                         Text="{Binding UserLogin}"
-                                        TextColor="#5098CC" />
+                                        TextColor="#5098CC"
+                                        MaxLength="8"/>
                                 </StackLayout>
                             </Frame>
                             
@@ -82,7 +84,7 @@
                                     HorizontalOptions="Fill"
                                     Text="Войти"
                                     TextColor="White"
-                                    Clicked="OnSaveClicked"/>
+                                    Clicked="LoginCommand"/>
                                 
                             </Grid>
                             
